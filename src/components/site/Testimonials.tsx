@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Cpu, Languages } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const principles = [
   {
@@ -21,14 +22,14 @@ const principles = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 md:py-32">
+    <section id="testimonials" className="relative py-16 md:py-24">
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <Reveal className="max-w-2xl mx-auto text-center mb-16">
           <div className="text-xs tracking-[0.3em] text-primary mb-4">WHAT WE STAND FOR</div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Principles that <span className="text-gradient">shape every build</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6">
           {principles.map((p, i) => (
