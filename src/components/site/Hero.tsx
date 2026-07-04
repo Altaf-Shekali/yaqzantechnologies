@@ -44,9 +44,9 @@ export function Hero() {
               variants={item}
               className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
             >
-              Yaqzan Technologies builds privacy-first, India-first AI products — starting with
-              KAVAL, digital safety in Kannada, and HADI, an AI assistant with memory and
-              automation.
+              Yaqzan Technologies builds AI products for India — from The Inference, a live
+              autonomous content studio, to KAVAL, privacy-first digital safety in Kannada, and
+              HADI, a personal AI assistant.
             </motion.p>
 
             <motion.div variants={item} className="flex flex-wrap gap-4">
@@ -67,7 +67,7 @@ export function Hero() {
 
             <motion.div variants={item} className="flex flex-wrap items-center gap-6 sm:gap-8 pt-4">
               {[
-                { v: "2", l: "Flagship products" },
+                { v: "3", l: "Products" },
                 { v: "Privacy", l: "First" },
                 { v: "Kannada", l: "& English" },
               ].map((s) => (

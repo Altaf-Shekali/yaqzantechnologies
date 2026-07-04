@@ -18,17 +18,17 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-16 md:py-24">
       <div className="container mx-auto px-6">
-        <div className="relative glass-card rounded-3xl p-8 md:p-14 overflow-hidden">
+        <div className="relative glass-card rounded-3xl p-5 sm:p-8 md:p-14 overflow-hidden">
           <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
           <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-[oklch(0.5_0.2_260/0.25)] blur-[120px]" />
 
-          <div className="relative grid lg:grid-cols-2 gap-12 items-start">
+          <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
               <div className="text-xs tracking-[0.3em] text-primary mb-4">GET IN TOUCH</div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                 Questions, feedback, or <span className="text-gradient">partnerships?</span>
               </h2>
-              <p className="mt-6 text-muted-foreground text-lg max-w-md">
+              <p className="mt-6 text-muted-foreground text-base sm:text-lg max-w-md">
                 Want early access to our products, to collaborate, or just have a question? We'll
                 get back within 24 hours.
               </p>
