@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsKavalRouteImport } from './routes/products.kaval'
+import { Route as ProductsInferenceRouteImport } from './routes/products.inference'
 import { Route as ProductsHadiRouteImport } from './routes/products.hadi'
 import { Route as ProductsKavalIndexRouteImport } from './routes/products.kaval.index'
+import { Route as ProductsInferenceIndexRouteImport } from './routes/products.inference.index'
 import { Route as ProductsHadiIndexRouteImport } from './routes/products.hadi.index'
 import { Route as ProductsKavalPrivacyRouteImport } from './routes/products.kaval.privacy'
 import { Route as ProductsHadiPrivacyRouteImport } from './routes/products.hadi.privacy'
@@ -33,6 +35,11 @@ const ProductsKavalRoute = ProductsKavalRouteImport.update({
   path: '/products/kaval',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsInferenceRoute = ProductsInferenceRouteImport.update({
+  id: '/products/inference',
+  path: '/products/inference',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsHadiRoute = ProductsHadiRouteImport.update({
   id: '/products/hadi',
   path: '/products/hadi',
@@ -42,6 +49,11 @@ const ProductsKavalIndexRoute = ProductsKavalIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ProductsKavalRoute,
+} as any)
+const ProductsInferenceIndexRoute = ProductsInferenceIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProductsInferenceRoute,
 } as any)
 const ProductsHadiIndexRoute = ProductsHadiIndexRouteImport.update({
   id: '/',
@@ -63,10 +75,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
   '/products/hadi': typeof ProductsHadiRouteWithChildren
+  '/products/inference': typeof ProductsInferenceRouteWithChildren
   '/products/kaval': typeof ProductsKavalRouteWithChildren
   '/products/hadi/privacy': typeof ProductsHadiPrivacyRoute
   '/products/kaval/privacy': typeof ProductsKavalPrivacyRoute
   '/products/hadi/': typeof ProductsHadiIndexRoute
+  '/products/inference/': typeof ProductsInferenceIndexRoute
   '/products/kaval/': typeof ProductsKavalIndexRoute
 }
 export interface FileRoutesByTo {
@@ -75,6 +89,7 @@ export interface FileRoutesByTo {
   '/products/hadi/privacy': typeof ProductsHadiPrivacyRoute
   '/products/kaval/privacy': typeof ProductsKavalPrivacyRoute
   '/products/hadi': typeof ProductsHadiIndexRoute
+  '/products/inference': typeof ProductsInferenceIndexRoute
   '/products/kaval': typeof ProductsKavalIndexRoute
 }
 export interface FileRoutesById {
@@ -82,10 +97,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
   '/products/hadi': typeof ProductsHadiRouteWithChildren
+  '/products/inference': typeof ProductsInferenceRouteWithChildren
   '/products/kaval': typeof ProductsKavalRouteWithChildren
   '/products/hadi/privacy': typeof ProductsHadiPrivacyRoute
   '/products/kaval/privacy': typeof ProductsKavalPrivacyRoute
   '/products/hadi/': typeof ProductsHadiIndexRoute
+  '/products/inference/': typeof ProductsInferenceIndexRoute
   '/products/kaval/': typeof ProductsKavalIndexRoute
 }
 export interface FileRouteTypes {
@@ -94,10 +111,12 @@ export interface FileRouteTypes {
     | '/'
     | '/privacy'
     | '/products/hadi'
+    | '/products/inference'
     | '/products/kaval'
     | '/products/hadi/privacy'
     | '/products/kaval/privacy'
     | '/products/hadi/'
+    | '/products/inference/'
     | '/products/kaval/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -106,16 +125,19 @@ export interface FileRouteTypes {
     | '/products/hadi/privacy'
     | '/products/kaval/privacy'
     | '/products/hadi'
+    | '/products/inference'
     | '/products/kaval'
   id:
     | '__root__'
     | '/'
     | '/privacy'
     | '/products/hadi'
+    | '/products/inference'
     | '/products/kaval'
     | '/products/hadi/privacy'
     | '/products/kaval/privacy'
     | '/products/hadi/'
+    | '/products/inference/'
     | '/products/kaval/'
   fileRoutesById: FileRoutesById
 }
@@ -123,6 +145,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductsHadiRoute: typeof ProductsHadiRouteWithChildren
+  ProductsInferenceRoute: typeof ProductsInferenceRouteWithChildren
   ProductsKavalRoute: typeof ProductsKavalRouteWithChildren
 }
 
@@ -149,6 +172,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsKavalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/inference': {
+      id: '/products/inference'
+      path: '/products/inference'
+      fullPath: '/products/inference'
+      preLoaderRoute: typeof ProductsInferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/hadi': {
       id: '/products/hadi'
       path: '/products/hadi'
@@ -162,6 +192,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/products/kaval/'
       preLoaderRoute: typeof ProductsKavalIndexRouteImport
       parentRoute: typeof ProductsKavalRoute
+    }
+    '/products/inference/': {
+      id: '/products/inference/'
+      path: '/'
+      fullPath: '/products/inference/'
+      preLoaderRoute: typeof ProductsInferenceIndexRouteImport
+      parentRoute: typeof ProductsInferenceRoute
     }
     '/products/hadi/': {
       id: '/products/hadi/'
@@ -201,6 +238,17 @@ const ProductsHadiRouteWithChildren = ProductsHadiRoute._addFileChildren(
   ProductsHadiRouteChildren,
 )
 
+interface ProductsInferenceRouteChildren {
+  ProductsInferenceIndexRoute: typeof ProductsInferenceIndexRoute
+}
+
+const ProductsInferenceRouteChildren: ProductsInferenceRouteChildren = {
+  ProductsInferenceIndexRoute: ProductsInferenceIndexRoute,
+}
+
+const ProductsInferenceRouteWithChildren =
+  ProductsInferenceRoute._addFileChildren(ProductsInferenceRouteChildren)
+
 interface ProductsKavalRouteChildren {
   ProductsKavalPrivacyRoute: typeof ProductsKavalPrivacyRoute
   ProductsKavalIndexRoute: typeof ProductsKavalIndexRoute
@@ -219,6 +267,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyRoute: PrivacyRoute,
   ProductsHadiRoute: ProductsHadiRouteWithChildren,
+  ProductsInferenceRoute: ProductsInferenceRouteWithChildren,
   ProductsKavalRoute: ProductsKavalRouteWithChildren,
 }
 export const routeTree = rootRouteImport

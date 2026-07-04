@@ -16,7 +16,8 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-5 text-sm text-muted-foreground max-w-sm">
-              Engineering intelligent software, cloud platforms, and AI products for the next era of business.
+              A small, independent team building privacy-first apps for Indian users — starting with
+              KAVAL, digital safety in Kannada, and HADI, a personal AI assistant.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -32,31 +33,89 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Company</div>
+            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Company
+            </div>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#products" className="hover:text-primary transition-colors">Products</a></li>
-              <li><a href="/#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="/#careers" className="hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
+              <li>
+                <a href="/#products" className="hover:text-primary transition-colors">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="/#about" className="hover:text-primary transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/#careers" className="hover:text-primary transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="/#contact" className="hover:text-primary transition-colors">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Products</div>
+            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Products
+            </div>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/products/hadi" className="hover:text-primary transition-colors">HADI</Link></li>
-              <li><Link to="/products/kaval" className="hover:text-primary transition-colors">KAVAL</Link></li>
-              <li><a href="/#products" className="hover:text-primary transition-colors">Coming Soon</a></li>
+              <li>
+                <Link to="/products/inference" className="hover:text-primary transition-colors">
+                  The Inference
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/kaval" className="hover:text-primary transition-colors">
+                  KAVAL
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/hadi" className="hover:text-primary transition-colors">
+                  HADI
+                </Link>
+              </li>
+              <li>
+                <a href="/#products" className="hover:text-primary transition-colors">
+                  Coming Soon
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Legal</div>
+            <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Legal
+            </div>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/products/hadi/privacy" className="hover:text-primary transition-colors">HADI Privacy</Link></li>
-              <li><Link to="/products/kaval/privacy" className="hover:text-primary transition-colors">KAVAL Privacy</Link></li>
-              <li><a href="mailto:info@yaqzantechnologies.online" className="hover:text-primary transition-colors">info@yaqzantechnologies.online</a></li>
+              <li>
+                <Link to="/privacy" className="hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/hadi/privacy" className="hover:text-primary transition-colors">
+                  HADI Privacy
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/kaval/privacy" className="hover:text-primary transition-colors">
+                  KAVAL Privacy
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@yaqzantechnologies.online"
+                  className="hover:text-primary transition-colors"
+                >
+                  hello@yaqzantechnologies.online
+                </a>
+              </li>
             </ul>
           </div>
         </div>

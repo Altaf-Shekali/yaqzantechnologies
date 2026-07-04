@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteBackground } from "@/components/site/SiteBackground";
 
 function NotFoundComponent() {
   return (
@@ -72,22 +73,78 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://yaqzantechnologies.online";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const DESCRIPTION =
+  "Yaqzan Technologies builds privacy-first, India-first AI products — including KAVAL, Kannada-first digital safety, and HADI, an AI assistant with memory and automation.";
+
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Yaqzan Technologies",
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon.svg`,
+  image: OG_IMAGE,
+  description: DESCRIPTION,
+  email: "hello@yaqzantechnologies.online",
+  foundingDate: "2025",
+  areaServed: { "@type": "Country", name: "India" },
+  // Founder hidden until public release — restore to add founder to structured data:
+  // founder: {
+  //   "@type": "Person",
+  //   name: "Altaf Shekali",
+  //   jobTitle: "Founder & Builder",
+  //   sameAs: ["https://www.linkedin.com/in/altaf-shekali", "https://github.com/Altaf-Shekali"],
+  // },
+  sameAs: ["https://www.linkedin.com/company/yaqzan-technologies/"],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Yaqzan Technologies" },
-      { name: "description", content: "Engineering tomorrow's intelligent solutions." },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { title: "Yaqzan Technologies — Privacy-first AI products" },
+      { name: "description", content: DESCRIPTION },
+      { name: "theme-color", content: "#0F172A" },
+      { name: "robots", content: "index, follow" },
+      { name: "author", content: "Yaqzan Technologies" },
+      {
+        name: "keywords",
+        content:
+          "Yaqzan Technologies, KAVAL, HADI, The Inference, privacy-first AI, Kannada app, digital safety, India, autonomous AI video, scam protection, AI assistant",
+      },
+      // Open Graph
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Yaqzan Technologies" },
+      { property: "og:title", content: "Yaqzan Technologies — Privacy-first AI products" },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:locale", content: "en_IN" },
+      // Twitter
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Yaqzan Technologies — Privacy-first AI products" },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_JSONLD),
       },
     ],
   }),
@@ -116,6 +173,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SiteBackground />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

@@ -70,7 +70,7 @@ function KavalPrivacy() {
 
       <h2>10. Contact</h2>
       <p>
-        Questions about this policy? Contact us at <a href="mailto:privacy@yaqzantechnologies.online">privacy@yaqzantechnologies.online</a>.
+        Questions about this policy? Contact us at <a href="mailto:hello@yaqzantechnologies.online">hello@yaqzantechnologies.online</a>.
       </p>
     </PolicyLayout>
   );

@@ -1,83 +1,145 @@
-import { useEffect, useRef, useState } from "react";
-import { Rocket, Cpu, ShieldCheck, Layers, HeartHandshake, Zap } from "lucide-react";
+import {
+  Rocket,
+  Cpu,
+  ShieldCheck,
+  Languages,
+  HeartHandshake,
+  Zap,
+  ArrowUpRight,
+} from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Reveal, RevealGroup, RevealItem } from "./Reveal";
 
-const stats = [
-  { v: 2, suffix: "", label: "Flagship Products" },
-  { v: 100, suffix: "%", label: "Privacy-First" },
-  { v: 2, suffix: "", label: "Languages Supported" },
-  { v: 24, suffix: "h", label: "Response Time" },
-];
-
+// Honest, concrete "how we build" points — no agency filler.
 const reasons = [
-  { icon: Rocket, title: "Innovation Driven", text: "We move at startup speed with enterprise rigor." },
-  { icon: Cpu, title: "Modern Technologies", text: "A future-ready stack across AI, cloud, and data." },
-  { icon: ShieldCheck, title: "Secure Solutions", text: "Security and privacy built in from day one." },
-  { icon: Layers, title: "Scalable Architecture", text: "Designed to grow with your business — gracefully." },
-  { icon: HeartHandshake, title: "Customer Focus", text: "A true partner — committed to your outcomes." },
-  { icon: Zap, title: "Performance Optimized", text: "Snappy, efficient, and built for real-world load." },
+  {
+    icon: Rocket,
+    title: "Prototype fast, learn faster",
+    text: "We ship small prototypes early and put them in front of real people, instead of polishing in private for months.",
+  },
+  {
+    icon: Cpu,
+    title: "On-device by design",
+    text: "App scans, link checks and breach lookups are built to run on your phone — your data doesn't need our servers to work.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Privacy in the architecture",
+    text: "No accounts you don't need, no data sold, no hidden trackers. Privacy is a design constraint, not a marketing line.",
+  },
+  {
+    icon: Languages,
+    title: "Kannada-first, not translated-last",
+    text: "We design in Kannada from the start so the product feels native to Karnataka. English is always one tap away.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Built for local threats",
+    text: "We focus on the frauds actually hitting India — OTP, UPI, KYC, 'digital arrest' and fake-loan-app scams.",
+  },
+  {
+    icon: Zap,
+    title: "Talk to the makers",
+    text: "We're a small team. Bugs, feedback and ideas reach the people writing the code directly.",
+  },
 ];
 
-function useCounter(target: number, decimals = 0) {
-  const [val, setVal] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-  useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !started.current) {
-          started.current = true;
-          const dur = 1600;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const p = Math.min((now - start) / dur, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            setVal(target * eased);
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      });
-    }, { threshold: 0.4 });
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, [target]);
-  return { ref, display: val.toFixed(decimals) };
-}
-
-function Stat({ v, suffix, label, decimals = 0 }: { v: number; suffix: string; label: string; decimals?: number }) {
-  const { ref, display } = useCounter(v, decimals);
-  return (
-    <div className="text-center">
-      <div className="font-display text-5xl md:text-6xl font-bold text-gradient">
-        <span ref={ref}>{display}</span>
-        <span>{suffix}</span>
-      </div>
-      <div className="mt-2 text-xs tracking-[0.2em] uppercase text-muted-foreground">{label}</div>
-    </div>
-  );
-}
+// Current, honest status of each product. Update the status label as things ship.
+const status = [
+  {
+    name: "The Inference",
+    stage: "Live",
+    to: "/products/inference",
+    points: [
+      "Autonomous video studio running end-to-end today",
+      "Publishing to multiple YouTube channels on a schedule",
+      "English, Hindi & Kannada content",
+    ],
+  },
+  {
+    name: "KAVAL",
+    stage: "Working · Pre-launch",
+    to: "/products/kaval",
+    points: [
+      "Working build: app scan, link/Wi-Fi checks, breach & password tools",
+      "Scam Academy (Kannada + English) built out",
+      "Polishing toward a Google Play beta in 2026",
+    ],
+  },
+  {
+    name: "HADI",
+    stage: "Working · Unreleased",
+    to: "/products/hadi",
+    points: [
+      "Memory + task-automation core works and runs locally",
+      "Not deployed publicly yet — that's the current step",
+      "Waitlist / demo available on request",
+    ],
+  },
+];
 
 export function WhyUs() {
   return (
-    <section id="why" className="relative py-24 md:py-32">
+    <section id="why" className="relative py-16 md:py-24">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="text-xs tracking-[0.3em] text-primary mb-4">WHY YAQZAN</div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
-            A team obsessed with <span className="text-gradient">craft & impact</span>
+        <Reveal className="max-w-3xl mx-auto text-center mb-16">
+          <div className="text-xs tracking-[0.3em] text-primary mb-4">HOW WE BUILD</div>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            A small team that ships in the <span className="text-gradient">open</span>
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="glass-card rounded-3xl p-10 md:p-14 mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            {stats.map((s) => <Stat key={s.label} {...s} />)}
+        {/* Honest development status — replaces the old animated stat counters */}
+        <Reveal className="mb-16">
+          <div className="glass-card rounded-3xl p-6 sm:p-8 md:p-10">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+              </span>
+              <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                Where we are right now
+              </span>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {status.map((s) => (
+                <div key={s.name} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <div className="font-display text-2xl font-bold">{s.name}</div>
+                    <span className="text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full border bg-primary/15 text-primary border-primary/30">
+                      {s.stage}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={s.to}
+                    className="group mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    See details & roadmap
+                    <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-xs text-muted-foreground">
+              We'll add screenshots, a demo video and beta numbers here as they become real — not
+              before.
+            </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {reasons.map((r) => (
-            <div
+            <RevealItem
               key={r.title}
               className="group glass-card rounded-2xl p-6 flex gap-4 hover:border-primary/40 hover:-translate-y-1 transition-all"
             >
@@ -88,9 +150,9 @@ export function WhyUs() {
                 <div className="font-semibold">{r.title}</div>
                 <div className="text-sm text-muted-foreground mt-1">{r.text}</div>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MapPin, Linkedin } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Linkedin, Clock, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import type { FormEvent } from "react";
 
@@ -11,12 +11,12 @@ function handleContactSubmit(e: FormEvent<HTMLFormElement>) {
   const message = String(data.get("message") ?? "");
   const subject = `Project enquiry from ${name || "website"}`;
   const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`;
-  window.location.href = `mailto:contact@yaqzantechnologies.online?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:hello@yaqzantechnologies.online?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-32">
+    <section id="contact" className="relative py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="relative glass-card rounded-3xl p-8 md:p-14 overflow-hidden">
           <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
@@ -29,26 +29,21 @@ export function Contact() {
                 Questions, feedback, or <span className="text-gradient">partnerships?</span>
               </h2>
               <p className="mt-6 text-muted-foreground text-lg max-w-md">
-                Want early access to our products, to collaborate, or just have a question? We'll get back within 24 hours.
+                Want early access to our products, to collaborate, or just have a question? We'll
+                get back within 24 hours.
               </p>
 
               <div className="mt-10 space-y-4 text-sm">
                 <div className="rounded-2xl border border-white/10 bg-background/30 p-4">
-                  <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-3">Email directory</div>
+                  <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mb-3">
+                    How to reach us
+                  </div>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {[
-                      ["General", "hello@yaqzantechnologies.online"],
-                      ["Support", "support@yaqzantechnologies.online"],
-                      ["Contact", "contact@yaqzantechnologies.online"],
-                      ["Careers", "careers@yaqzantechnologies.online"],
-                      ["Info", "info@yaqzantechnologies.online"],
-                      ["Legal", "legal@yaqzantechnologies.online"],
-                      ["Privacy", "privacy@yaqzantechnologies.online"],
-                      ["Founders", "founders@yaqzantechnologies.online"],
-                      ["KAVAL", "kaval@yaqzantechnologies.online"],
-                      ["HADI", "hadi@yaqzantechnologies.online"],
-                      ["Partnerships", "partnerships@yaqzantechnologies.online"],
-                      ["Security", "security@yaqzantechnologies.online"],
+                      ["General & partnerships", "hello@yaqzantechnologies.online"],
+                      ["Product support", "support@yaqzantechnologies.online"],
+                      ["Contributors & hiring", "careers@yaqzantechnologies.online"],
+                      ["Security reports", "security@yaqzantechnologies.online"],
                     ].map(([label, email]) => (
                       <a
                         key={email}
@@ -57,7 +52,9 @@ export function Contact() {
                       >
                         <Mail className="h-3.5 w-3.5 text-primary" />
                         <span className="min-w-0">
-                          <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{label}</span>
+                          <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                            {label}
+                          </span>
                           <span className="block truncate text-sm text-foreground/90">{email}</span>
                         </span>
                       </a>
@@ -65,7 +62,7 @@ export function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <MapPin className="h-4 w-4 text-primary" /> Bangalore · Remote
+                  <MapPin className="h-4 w-4 text-primary" /> Remote · Building for India
                 </div>
               </div>
 
@@ -81,14 +78,27 @@ export function Contact() {
                 </a>
               </div>
 
-              <div className="mt-8 relative rounded-2xl overflow-hidden border border-white/10 aspect-[16/9]">
-                <iframe
-                  title="Yaqzan location — Karnataka, India"
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-80"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=77.45%2C12.85%2C77.75%2C13.10&layer=mapnik"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/60 via-transparent to-primary/10" />
+              <div className="mt-8 grid sm:grid-cols-2 gap-3">
+                <div className="glass rounded-2xl p-4 flex items-start gap-3">
+                  <div className="h-9 w-9 shrink-0 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <Clock className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium">Within 24 hours</div>
+                    <div className="text-xs text-muted-foreground">Typical reply time</div>
+                  </div>
+                </div>
+                <div className="glass rounded-2xl p-4 flex items-start gap-3">
+                  <div className="h-9 w-9 shrink-0 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium">No trackers here</div>
+                    <div className="text-xs text-muted-foreground">
+                      This site sets no analytics cookies
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

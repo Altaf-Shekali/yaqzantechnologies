@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Careers() {
   return (
-    <section id="careers" className="relative py-24 md:py-32">
+    <section id="careers" className="relative py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <div className="text-xs tracking-[0.3em] text-primary mb-4">CAREERS</div>
