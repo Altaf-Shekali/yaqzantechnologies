@@ -2,7 +2,6 @@ import {
   ArrowUpRight,
   Shield,
   Bot,
-  Sparkles,
   Calendar,
   Mail,
   Brain,
@@ -72,17 +71,6 @@ const products = [
     ],
     accent: "from-[#fb7185]/25 to-[#fb7185]/0",
   },
-
-  {
-    name: "Next Horizon",
-    tagline: "What we're exploring next.",
-    desc: "Ideas we're looking at once KAVAL and HADI ship — more on-device safety tools and AI helpers made for Indian users. Nothing announced yet; we'll only list it here when it's real.",
-    status: "Exploring",
-    statusColor: "bg-white/5 text-muted-foreground border-white/10",
-    icon: Sparkles,
-    features: [],
-    accent: "from-[#67e8f9]/20 to-[#67e8f9]/0",
-  },
 ];
 
 export function Products() {
@@ -95,8 +83,8 @@ export function Products() {
             Software built to <span className="text-gradient">move you forward</span>
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Three products we're building — from a live autonomous studio to apps still in the
-            workshop — and an expanding horizon beyond.
+            Three products, built in the open — from a live autonomous studio to apps on their way
+            to launch.
           </p>
         </Reveal>
 
