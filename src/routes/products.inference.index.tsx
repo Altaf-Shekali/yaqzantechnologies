@@ -153,10 +153,18 @@ function InferencePage() {
 
             <div className="mt-10 flex flex-wrap gap-3">
               <a
-                href="mailto:hello@yaqzantechnologies.online?subject=The%20Inference&body=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20The%20Inference."
+                href="https://www.youtube.com/@TheInference-T"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:shadow-[var(--glow-primary)] transition-all"
               >
-                See it in action <ArrowUpRight className="h-4 w-4" />
+                <Youtube className="h-4 w-4" /> Watch it in action
+              </a>
+              <a
+                href="mailto:hello@yaqzantechnologies.online?subject=The%20Inference&body=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20The%20Inference."
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-sm hover:border-primary/40 hover:text-primary transition-all"
+              >
+                Get in touch <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </Reveal>
