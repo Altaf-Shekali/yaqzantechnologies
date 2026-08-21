@@ -41,10 +41,10 @@ const products = [
     accent: "from-[#3EF2E3]/30 to-[#3EF2E3]/0",
   },
   {
-    name: "KAVAL",
+    name: "Namma Kaval",
     tagline: "Kannada-first digital safety — spot scams before they cost you.",
-    desc: "KAVAL is a free, Kannada-first digital-safety app that helps everyday people in Karnataka and across India stay safe online. It scans installed apps for risky permissions and sideloaded threats, checks link and Wi-Fi safety, tells you if your email or passwords have leaked, and teaches you to recognise real India-specific scams — OTP, UPI, KYC, 'digital arrest', and fake loan apps — through a gamified Scam Academy. Everything runs on your device, with no accounts and nothing sold.",
-    status: "Working · Launching 2026",
+    desc: "Namma Kaval is a free, Kannada-first digital-safety app that helps everyday people in Karnataka and across India stay safe online. It scans installed apps for risky permissions and sideloaded threats, checks link and Wi-Fi safety, tells you if your email or passwords have leaked, and teaches you to recognise real India-specific scams — OTP, UPI, KYC, 'digital arrest', and fake loan apps — through a gamified Scam Academy. Everything runs on your device, with no accounts and nothing sold.",
+    status: "Working · Launching August 2026",
     statusColor: "bg-primary/15 text-primary border-primary/30",
     icon: Shield,
     features: [
@@ -94,7 +94,7 @@ export function Products() {
             const productLink =
               p.name === "HADI"
                 ? "/products/hadi"
-                : p.name === "KAVAL"
+                : p.name === "Namma Kaval"
                   ? "/products/kaval"
                   : p.name === "The Inference"
                     ? "/products/inference"

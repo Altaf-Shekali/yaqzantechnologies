@@ -40,13 +40,13 @@ const screenshots = [
 export const Route = createFileRoute("/products/kaval/")({
   head: () => ({
     meta: [
-      { title: "KAVAL — Kannada-first Digital Safety | Yaqzan Technologies" },
+      { title: "Namma Kaval — Kannada-first Digital Safety | Yaqzan Technologies" },
       {
         name: "description",
         content:
-          "KAVAL is a free, Kannada-first digital-safety app: scan apps, check links & leaks, and learn to spot India-specific scams — all on your device.",
+          "Namma Kaval is a free, Kannada-first digital-safety app: scan apps, check links & leaks, and learn to spot India-specific scams — all on your device.",
       },
-      { property: "og:title", content: "KAVAL — Kannada-first Digital Safety" },
+      { property: "og:title", content: "Namma Kaval — Kannada-first Digital Safety" },
       {
         property: "og:description",
         content:
@@ -120,7 +120,7 @@ const roadmap = [
   {
     phase: "2026",
     title: "Closed beta",
-    text: "First testers try KAVAL on their own phones; we fix what breaks before a public release.",
+    text: "First testers try Namma Kaval on their own phones; we fix what breaks before a public release.",
   },
   {
     phase: "Later",
@@ -131,15 +131,15 @@ const roadmap = [
 
 const faqs = [
   {
-    q: "Is KAVAL available to download yet?",
-    a: "Not on the Play Store yet. The app is built and working (see the screenshots above) — we're polishing it toward a Google Play beta in 2026. Join early access below and we'll tell you the moment it's testable.",
+    q: "Is Namma Kaval available to download yet?",
+    a: "It is being submitted to Google Play in August 2026. Google reviews every new app before it goes live, so there is usually a short wait after submission. Join early access below and we will send you the link the moment it is downloadable.",
   },
   {
     q: "Is it really free?",
     a: "Yes — the first version is free with no ads. If that ever changes, we'll say so clearly before it does.",
   },
   {
-    q: "Does KAVAL send my data anywhere?",
+    q: "Does Namma Kaval send my data anywhere?",
     a: "The app is built to run on your device. The only time anything leaves your phone is when you actively use the breach check (your email) or password-leak check (only a partial hash, never the full password). Full details are in the privacy policy.",
   },
   {
@@ -169,14 +169,14 @@ function KavalPage() {
           <Reveal>
             <div className="flex items-center gap-3 mb-6">
               <span className="text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full border bg-primary/15 text-primary border-primary/30">
-                Working build · Launching 2026
+                Working build · Launching August 2026
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              KAVAL <span className="text-gradient">— Digital safety in your language</span>
+              Namma Kaval <span className="text-gradient">— Digital safety in your language</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl">
-              KAVAL is a free, Kannada-first digital-safety app that helps everyday people in
+              Namma Kaval is a free, Kannada-first digital-safety app that helps everyday people in
               Karnataka and across India stay safe from online scams and privacy risks. Scan your
               phone for risky apps, check links and data leaks, and learn to recognise the scams
               actually targeting India — OTP, UPI, KYC, "digital arrest", and fake loan apps.
@@ -213,7 +213,7 @@ function KavalPage() {
               instant-loan traps are engineered for how people here actually use their phones — and
               they're often delivered in the victim's own language. Meanwhile, most security tools
               are in English, assume technical knowledge, and are built for a Western threat model.
-              KAVAL is the opposite: Kannada-first, plain-language, focused on the frauds hitting
+              Namma Kaval is the opposite: Kannada-first, plain-language, focused on the frauds hitting
               Indian users right now, and private by default.
             </p>
           </Reveal>
@@ -265,7 +265,7 @@ function KavalPage() {
                 >
                   <img
                     src={s.src}
-                    alt={`KAVAL — ${s.label}`}
+                    alt={`Namma Kaval — ${s.label}`}
                     loading="lazy"
                     className="w-full aspect-[9/19.5] object-cover object-top"
                   />
@@ -322,7 +322,7 @@ function KavalPage() {
             </div>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-muted-foreground">
               <p>
-                <strong className="text-foreground">No accounts, no backend.</strong> KAVAL has no
+                <strong className="text-foreground">No accounts, no backend.</strong> Namma Kaval has no
                 login and no server storing your data. Your app list, scores and settings live only
                 on your phone.
               </p>
@@ -392,14 +392,14 @@ function KavalPage() {
               <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
               <div className="relative">
                 <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight">
-                  Be first to try KAVAL
+                  Be first to try Namma Kaval
                 </h2>
                 <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
                   We'll email you when the beta is ready. No spam, no sharing your address — just
                   one message when it's testable.
                 </p>
                 <a
-                  href="mailto:hello@yaqzantechnologies.online?subject=KAVAL%20early%20access&body=Hi%2C%20I'd%20like%20early%20access%20to%20KAVAL."
+                  href="mailto:hello@yaqzantechnologies.online?subject=Namma Kaval%20early%20access&body=Hi%2C%20I'd%20like%20early%20access%20to%20Namma Kaval."
                   className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium shadow-[var(--glow-primary)] hover:shadow-[var(--glow-strong)] hover:scale-[1.02] transition-all"
                 >
                   Request early access <ArrowUpRight className="h-4 w-4" />

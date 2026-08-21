@@ -25,17 +25,19 @@ function PrivacyPage() {
     >
       <p>
         This policy covers <strong>this website</strong> (yaqzantechnologies.online). Our apps
-        handle data differently — see the <Link to="/products/kaval/privacy">KAVAL</Link> and{" "}
+        handle data differently — see the <Link to="/products/kaval/privacy">Namma Kaval</Link> and{" "}
         <Link to="/products/hadi/privacy">HADI</Link> policies for those. We keep this site
-        deliberately light: <strong>no analytics, no tracking cookies, and no accounts.</strong>
+        deliberately light: <strong>no ad trackers, no personal-data collection, and no accounts.</strong>
       </p>
 
       <h2>1. What this website collects</h2>
       <ul>
         <li>
-          <strong>Nothing automatically.</strong> We don't run Google Analytics or any other
-          analytics or advertising tracker, and we don't set tracking cookies. We don't build
-          profiles of visitors.
+          <strong>Privacy-first analytics.</strong> We use Cloudflare Web Analytics to count visits
+          and see aggregate information like page views, referrers, and visitor country —
+          <strong> without cookies, without tracking you across other sites, and without collecting
+          personal data.</strong> We don't run Google Analytics, advertising trackers, or build
+          profiles of individual visitors.
         </li>
         <li>
           <strong>Only what you email us.</strong> Our contact form doesn't send data to a server we
@@ -82,7 +84,7 @@ function PrivacyPage() {
       <p>Each product documents its own data handling:</p>
       <ul>
         <li>
-          <Link to="/products/kaval/privacy">KAVAL Privacy Policy</Link> — on-device digital-safety
+          <Link to="/products/kaval/privacy">Namma Kaval Privacy Policy</Link> — on-device digital-safety
           app (no accounts, no data sold).
         </li>
         <li>

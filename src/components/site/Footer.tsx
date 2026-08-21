@@ -17,7 +17,7 @@ export function Footer() {
             </div>
             <p className="mt-5 text-sm text-muted-foreground max-w-sm">
               A small, independent team building privacy-first apps for Indian users — starting with
-              KAVAL, digital safety in Kannada, and HADI, a personal AI assistant.
+              Namma Kaval, digital safety in Kannada, and HADI, a personal AI assistant.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -72,7 +72,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/products/kaval" className="hover:text-primary transition-colors">
-                  KAVAL
+                  Namma Kaval
                 </Link>
               </li>
               <li>
@@ -105,7 +105,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/products/kaval/privacy" className="hover:text-primary transition-colors">
-                  KAVAL Privacy
+                  Namma Kaval Privacy
                 </Link>
               </li>
               <li>

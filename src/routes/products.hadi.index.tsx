@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     q: "How is my data handled?",
-    a: "Privacy is a first-class goal, the same as KAVAL. As the design firms up we'll publish exactly what's processed where in HADI's privacy policy.",
+    a: "Privacy is a first-class goal, the same as Namma Kaval. As the design firms up we'll publish exactly what's processed where in HADI's privacy policy.",
   },
 ];
 
@@ -197,7 +197,7 @@ function HadiPage() {
               </p>
               <p>
                 <strong className="text-foreground">Privacy-minded from the start.</strong> The same
-                principle behind KAVAL guides HADI's design.
+                principle behind Namma Kaval guides HADI's design.
               </p>
               <p>
                 <strong className="text-foreground">Honest about stage.</strong> Everything below is

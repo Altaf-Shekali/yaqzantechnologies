@@ -4,8 +4,8 @@ import { PolicyLayout } from "@/components/site/PolicyLayout";
 export const Route = createFileRoute("/products/kaval/privacy")({
   head: () => ({
     meta: [
-      { title: "KAVAL Privacy Policy | Yaqzan Technologies" },
-      { name: "description", content: "Privacy policy for KAVAL — Yaqzan's free, on-device digital-safety app. No accounts, no data sold." },
+      { title: "Namma Kaval Privacy Policy | Yaqzan Technologies" },
+      { name: "description", content: "Privacy policy for Namma Kaval — Yaqzan's free, on-device digital-safety app. No accounts, no data sold." },
     ],
   }),
   component: KavalPrivacy,
@@ -13,14 +13,14 @@ export const Route = createFileRoute("/products/kaval/privacy")({
 
 function KavalPrivacy() {
   return (
-    <PolicyLayout product="KAVAL" title="Privacy Policy" updated="2026" backTo="/products/kaval">
+    <PolicyLayout product="Namma Kaval" title="Privacy Policy" updated="7 August 2026" backTo="/products/kaval">
       <p>
-        KAVAL is a free digital-safety app by Yaqzan Technologies ("we", "us"). It has <strong>no user accounts, does not collect or sell your personal data, and runs almost entirely on your phone.</strong> This policy explains the little data involved and how the app behaves.
+        Namma Kaval is a free digital-safety app by Yaqzan Technologies ("we", "us"). It has <strong>no user accounts, does not collect or sell your personal data, and runs almost entirely on your phone.</strong> This policy explains the little data involved and how the app behaves.
       </p>
 
       <h2>1. Information We Collect</h2>
       <p>
-        We do not collect, store, or transmit your personal data to our own servers. KAVAL has no backend and no accounts. A few non-personal items — your language, safety score, points, streak, and whether you've seen the intro — are stored <strong>only on your device</strong> and are removed when you uninstall.
+        We do not collect, store, or transmit your personal data to our own servers. Namma Kaval has no backend and no accounts. A few non-personal items — your language, safety score, points, streak, and whether you've seen the intro — are stored <strong>only on your device</strong> and are removed when you uninstall.
       </p>
 
       <h2>2. On-device Processing (never leaves your phone)</h2>
@@ -41,7 +41,7 @@ function KavalPrivacy() {
 
       <h2>4. Advertising</h2>
       <p>
-        This version of KAVAL shows <strong>no ads</strong> and includes no advertising SDK. If a future update adds ads, this policy will be updated before that release to explain what is collected.
+        This version of Namma Kaval shows <strong>no ads</strong> and includes no advertising SDK. If a future update adds ads, this policy will be updated before that release to explain what is collected.
       </p>
 
       <h2>5. Permissions and Why</h2>
@@ -53,7 +53,7 @@ function KavalPrivacy() {
       </ul>
 
       <h2>6. Children's Privacy</h2>
-      <p>KAVAL is for a general audience and is not directed at children under 13.</p>
+      <p>Namma Kaval is for a general audience and is not directed at children under 13.</p>
 
       <h2>7. Data Security &amp; Retention</h2>
       <p>

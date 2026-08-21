@@ -57,7 +57,7 @@ const status = [
     ],
   },
   {
-    name: "KAVAL",
+    name: "Namma Kaval",
     stage: "Working · Pre-launch",
     to: "/products/kaval",
     points: [

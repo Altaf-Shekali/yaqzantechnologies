@@ -18,7 +18,7 @@ const timeline = [
   {
     year: "2026",
     title: "First Products",
-    text: "Launching KAVAL — Kannada-first digital safety — and HADI, our AI assistant with memory and automation.",
+    text: "Launching Namma Kaval — Kannada-first digital safety — and HADI, our AI assistant with memory and automation.",
   },
   {
     year: "2027",
@@ -37,7 +37,7 @@ export function About() {
             A startup engineered for the <span className="text-gradient">intelligent era</span>
           </h2>
           <p className="mt-6 text-muted-foreground text-base sm:text-lg">
-            We're an early team building our own products — not an agency. Right now that's KAVAL, a
+            We're an early team building our own products — not an agency. Right now that's Namma Kaval, a
             Kannada-first digital-safety app, and HADI, a personal AI assistant. Privacy and
             on-device processing come first.
           </p>

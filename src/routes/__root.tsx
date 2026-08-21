@@ -76,7 +76,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const SITE_URL = "https://yaqzantechnologies.online";
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const DESCRIPTION =
-  "Yaqzan Technologies builds privacy-first, India-first AI products — including KAVAL, Kannada-first digital safety, and HADI, an AI assistant with memory and automation.";
+  "Yaqzan Technologies builds privacy-first, India-first AI products — including Namma Kaval, Kannada-first digital safety, and HADI, an AI assistant with memory and automation.";
 
 const ORG_JSONLD = {
   "@context": "https://schema.org",
@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "Yaqzan Technologies, KAVAL, HADI, The Inference, privacy-first AI, Kannada app, digital safety, India, autonomous AI video, scam protection, AI assistant",
+          "Yaqzan Technologies, Namma Kaval, HADI, The Inference, privacy-first AI, Kannada app, digital safety, India, autonomous AI video, scam protection, AI assistant",
       },
       // Open Graph
       { property: "og:type", content: "website" },
@@ -159,6 +159,14 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Cloudflare Web Analytics — cookieless, no personal data collected.
+            Get your token from dash.cloudflare.com > Analytics & Logs > Web Analytics,
+            then paste it below (replace YOUR_CLOUDFLARE_BEACON_TOKEN). */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"YOUR_CLOUDFLARE_BEACON_TOKEN"}'
+        />
       </head>
       <body>
         {children}

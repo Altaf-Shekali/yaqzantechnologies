@@ -20,12 +20,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Yaqzan Technologies builds privacy-first, India-first AI products — including KAVAL, Kannada-first digital safety, and HADI, an AI assistant with memory and automation.",
+          "Yaqzan Technologies builds privacy-first, India-first AI products — including Namma Kaval, Kannada-first digital safety, and HADI, an AI assistant with memory and automation.",
       },
       { property: "og:title", content: "Yaqzan Technologies" },
       {
         property: "og:description",
-        content: "Privacy-first, India-first AI products — KAVAL and HADI.",
+        content: "Privacy-first, India-first AI products — Namma Kaval and HADI.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://yaqzantechnologies.online/" },

@@ -45,7 +45,7 @@ export function Hero() {
               className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
             >
               Yaqzan Technologies builds AI products for India — from The Inference, a live
-              autonomous content studio, to KAVAL, privacy-first digital safety in Kannada, and
+              autonomous content studio, to Namma Kaval, privacy-first digital safety in Kannada, and
               HADI, a personal AI assistant.
             </motion.p>
 
